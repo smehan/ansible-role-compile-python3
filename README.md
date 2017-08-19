@@ -1,39 +1,30 @@
-Role Name
-=========
+# Ansible Role: Compile Python3
 
 Fetches a specified Python source tarball, installs it into a specified build directory,
 installs required dependencies, configures, makes and installs the resulting python3.
 
-Requirements
-------------
+## Requirements
 
 None.
 
-Role Variables
---------------
+## Role Variables
 
 See [defaults/main.yml](defaults/main.yml)
 
-Dependencies
-------------
+## Dependencies
 
 None.
 
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## Example Playbook
 
     - hosts: servers
       roles:
          - { role: smehan.compile-python3 }
 
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
-None
+This role was created in 2017 by [Shawn Mehan](https://www.shawnmehan.com).
