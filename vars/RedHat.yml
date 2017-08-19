@@ -1,0 +1,16 @@
+compiled_python3_redhat_deps:
+  - gcc
+  - gcc-c++
+  - python3-devel
+  - python-devel
+  - bzip2-devel
+  - zlib
+  - zlib-devel
+  - lzma
+  - ncurses-devel
+  - gdbm-devel
+  - openssl-libs
+  - iproute-devel
+  - tk-devel
+  - readline-devel
+  - libsqlite3x-devel

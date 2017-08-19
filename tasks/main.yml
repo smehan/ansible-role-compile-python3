@@ -1,0 +1,19 @@
+---
+# tasks file for smehan.python3_compiled
+
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# Compiled Python3
+- include: compile_Python3_RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- debug: msg="{{ compiled_python3_redhat_deps }}"
+  when: ansible_os_family == 'RedHat'
+
+- include: compile_Python3_Debian.yml
+  when: ansible_os_family == 'Debian'
+
+
+
+

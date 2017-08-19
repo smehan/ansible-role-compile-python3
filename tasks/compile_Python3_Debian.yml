@@ -1,0 +1,47 @@
+---
+- name: testing for built {{ compiled_python_dist_name }}
+  command: python{{ compiled_python_version.rsplit('.', 1)[0] }}
+  register: python_result
+  ignore_errors: True
+
+- name: Build latest {{ compiled_python_dist_name }}
+  block:
+
+  - name: install deps for building {{ compiled_python_dist_name }}
+    apt:
+      name: "{{ item }}"
+      state: installed
+    with_items: "{{ compiled_python3_debian_deps }}"
+
+  - name: Ensure unpack dir exists
+    # target directory needs to exist to keep unarchive happy
+    file:
+      state: directory
+      path: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
+
+  - name: extract tarball
+    unarchive:
+      remote_src: True
+      src: "https://www.python.org/ftp/python/{{ compiled_python_version }}/{{ compiled_python_tarball }}"
+      dest: "{{ compiled_python_build_dir }}"
+
+  - name: cfg build env
+    command: ./configure --enable-optimizations
+    args:
+      chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
+    register: result
+
+  - debug: msg="{{ result }}"
+    when: result|failed
+
+  - name: build new src
+    make:
+      chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
+      target: altinstall
+
+  - name: clean up build of {{ compiled_python_dist_name }}
+    file:
+      state: absent
+      path: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
+
+  when: python_result|failed

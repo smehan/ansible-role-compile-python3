@@ -1,0 +1,19 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: smehan
+  description: Python3 compile and install.
+  company: "Power Set Solutions, LLC"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.0
+  platforms:
+    - name: Debian
+      versions:
+      - all
+    - name: Ubuntu
+      versions:
+      - all
+  galaxy_tags:
+    - python3
+    - development
