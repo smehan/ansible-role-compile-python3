@@ -3,6 +3,8 @@
 Fetches a specified Python source tarball, installs it into a specified build directory,
 installs required dependencies, configures, makes and installs the resulting python3.
 
+[![Build Status](https://travis-ci.org/smehan/ansible-role-compile-python3.svg?branch=master)](https://travis-ci.org/smehan/ansible-role-compile-python3)
+
 ## Requirements
 
 None.
