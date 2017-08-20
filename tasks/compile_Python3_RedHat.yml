@@ -36,6 +36,11 @@
   - debug: msg={{ result }}
     when: result|failed
 
+  - command: "which make"
+    register: result
+
+  - debug: msg={{ result }}
+
   - name: build new src
     make:
       chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
