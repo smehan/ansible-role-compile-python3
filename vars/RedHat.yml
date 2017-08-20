@@ -1,7 +1,7 @@
 compiled_python3_redhat_deps:
   - gcc
   - gcc-c++
-  - python3-devel
+  - python-devel
   - bzip2-devel
   - zlib
   - zlib-devel
