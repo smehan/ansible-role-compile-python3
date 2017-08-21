@@ -9,7 +9,9 @@ compiled_python3_redhat_deps:
   - lzma
   - ncurses-devel
   - gdbm-devel
-  - openssl-libs
+  - openssl
+  - openssl-devel
+#  - openssl-libs
   - iproute-devel
   - tk-devel
   - readline-devel
