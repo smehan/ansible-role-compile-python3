@@ -1,5 +1,5 @@
 compiled_python3_debian_deps:
-  - build-essential
+#  - build-essential
   - libssl-dev
   - libcurl4-openssl-dev
   - zlib1g-dev
@@ -16,3 +16,6 @@ compiled_python3_debian_deps:
   - zlibc
   - tk-dev
   - libc6-dev
+
+
+# apt-get install libcurl4-gnutls-dev ubuntu14
