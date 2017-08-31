@@ -11,10 +11,10 @@ env:
 #    init: /sbin/init
   - distro: ubuntu1604
     init: /lib/systemd/systemd
-#  - distro: ubuntu1404
-#    init: /sbin/init
-#  - distro: debian8
-#    init: /lib/systemd/systemd
+  - distro: ubuntu1404
+    init: /sbin/init
+  - distro: debian8
+    init: /lib/systemd/systemd
 
 before_install:
   # Pull container
