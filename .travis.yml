@@ -7,8 +7,8 @@ services: docker
 env:
   - distro: centos7
     init: /usr/lib/systemd/systemd
-#  - distro: centos6
-#    init: /sbin/init
+  - distro: centos6
+    init: /sbin/init
   - distro: ubuntu1604
     init: /lib/systemd/systemd
   - distro: ubuntu1404
