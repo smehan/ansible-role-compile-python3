@@ -1,5 +1,10 @@
 compiled_python3_debian_deps:
-  - build-essential
+#  - build-essential
+  - dpkg-dev
+  - g++
+  - gcc
+  - libc6-dev
+  - make
   - libssl-dev
   - libcurl4-openssl-dev
   - zlib1g-dev
