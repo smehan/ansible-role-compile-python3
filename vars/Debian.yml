@@ -1,12 +1,18 @@
 compiled_python3_debian_deps:
   - build-essential
-  - checkinstall
-  - libreadline-dev
-  - zlibc
-  - zlib1g-dev
   - libssl-dev
+  - libcurl4-openssl-dev
+  - zlib1g-dev
+  - libncurses5-dev
+  - libncursesw5-dev
+  - libreadline-dev
   - libsqlite3-dev
-  - tk-dev
   - libgdbm-dev
-  - libc6-dev
+  - libdb5.3-dev
   - libbz2-dev
+  - libexpat1-dev
+  - liblzma-dev
+  - checkinstall
+  - zlibc
+  - tk-dev
+  - libc6-dev
