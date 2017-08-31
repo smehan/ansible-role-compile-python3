@@ -1,47 +1,44 @@
-- name: Define centos7 dependecies
-  compiled_python3_cemtos7_deps:
-    - gcc
-    - gcc-c++
-    - make
-    - python-devel
-    - bzip2-devel
-    - zlib
-    - zlib-devel
-    - lzma
-    - ncurses-devel
-    - gdbm-devel
-    - openssl
-    - openssl-devel
-    - iproute-devel
-    - tk-devel
-    - readline-devel
-    - libsqlite3x-devel
+# Define centos7 dependecies
+compiled_python3_centos7_deps:
+  - gcc
+  - gcc-c++
+  - make
+  - python-devel
+  - bzip2-devel
+  - zlib
+  - zlib-devel
+  - lzma
+  - ncurses-devel
+  - gdbm-devel
+  - openssl
+  - openssl-devel
+  - iproute-devel
+  - tk-devel
+  - readline-devel
+  - sqlite-devel
 
-- name: Define centos6 dependecies
-  compiled_python3_centos6_deps:
-    - gcc
-    - gcc-c++
-    - make
-    - python-devel
-    - bzip2-devel
-    - zlib
-    - zlib-devel
-    - lzma
-    - libpcap-devel
-    - xz-devel
-    - expat-devel
-    - ncurses-devel
-    - gdbm-devel
-    - db4-devel
-    - openssl
-    - openssl-devel
-    - iproute-devel
-    - tk-devel
-    - readline-devel
-    - sqlite-devel
+# Define centos6 dependencies
+compiled_python3_centos6_deps:
+  - gcc
+  - gcc-c++
+  - make
+  - python-devel
+  - bzip2-devel
+  - zlib
+  - zlib-devel
+  - lzma
+  - libpcap-devel
+  - xz-devel
+  - expat-devel
+  - ncurses-devel
+  - gdbm-devel
+  - db4-devel
+  - openssl
+  - openssl-devel
+  - iproute-devel
+  - tk-devel
+  - readline-devel
+  - sqlite-devel
 
-- name: Define current OS dependencies
-  compiled_python3_redhat_deps: "{{ compiled_python3_centos7_deps }}"
-  when: ansible_distribution_major_version == "7"
-  compiled_python3_redhat_deps: "{{ compiled_python3_centos6_deps }}"
-  when: ansible_distribution_major_version == "6"
+# Choose which set of dependencies based on major_version of target platform
+compiled_python3_redhat_deps: '{{ compiled_python3_centos7_deps if ansible_distribution_major_version == "7" else compiled_python3_centos6_deps}}'
