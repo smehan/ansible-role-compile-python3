@@ -1,47 +1,49 @@
 - name: Define centos7 dependecies
-  compiled_python3_redhat_deps:
-    - gcc
-    - gcc-c++
-    - make
-    - python-devel
-    - bzip2-devel
-    - zlib
-    - zlib-devel
-    - lzma
-    - ncurses-devel
-    - gdbm-devel
-    - openssl
-    - openssl-devel
-  #  - openssl-libs
-    - iproute-devel
-    - tk-devel
-    - readline-devel
-    - libsqlite3x-devel
+  set_fact:
+    compiled_python3_redhat_deps:
+      - gcc
+      - gcc-c++
+      - make
+      - python-devel
+      - bzip2-devel
+      - zlib
+      - zlib-devel
+      - lzma
+      - ncurses-devel
+      - gdbm-devel
+      - openssl
+      - openssl-devel
+    #  - openssl-libs
+      - iproute-devel
+      - tk-devel
+      - readline-devel
+      - libsqlite3x-devel
   when: ansible_distribution_version| "7"
 
 - name: Define centos6 dependecies
-  compiled_python3_redhat_deps:
-    - gcc
-    - gcc-c++
-    - make
-    - python-devel
-    - bzip2-devel
-    - zlib
-    - zlib-devel
-    - lzma
-    - libpcap-devel
-    - xz-devel
-    - expat-devel
-    - ncurses-devel
-    - gdbm-devel
-    - db4-devel
-    - openssl
-    - openssl-devel
-  #  - openssl-libs
-    - iproute-devel
-    - tk-devel
-    - readline-devel
-    - sqlite-devel
+  set_fact:
+    compiled_python3_redhat_deps:
+      - gcc
+      - gcc-c++
+      - make
+      - python-devel
+      - bzip2-devel
+      - zlib
+      - zlib-devel
+      - lzma
+      - libpcap-devel
+      - xz-devel
+      - expat-devel
+      - ncurses-devel
+      - gdbm-devel
+      - db4-devel
+      - openssl
+      - openssl-devel
+    #  - openssl-libs
+      - iproute-devel
+      - tk-devel
+      - readline-devel
+      - sqlite-devel
   when: ansible_distribution_version| "6.4"
 
 # yum install -y    sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel
