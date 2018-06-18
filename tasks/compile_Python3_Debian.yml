@@ -51,4 +51,4 @@
     command: python{{ compiled_python_version.rsplit('.', 1)[0] }} --version
     register: existing_python
 
-    debug: msg="{{ existing_python }} is present"
+- debug: msg="{{ existing_python }} is present"
