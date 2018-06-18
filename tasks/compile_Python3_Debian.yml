@@ -31,7 +31,7 @@
       chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
     register: result
 
-  - debug: msg={{ result }}
+  - debug: msg="{{ result }}"
     when: result is failed
 
   - name: build new src
