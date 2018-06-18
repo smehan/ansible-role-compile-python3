@@ -32,7 +32,7 @@
     register: result
 
   - debug: msg={{ result }}
-    when: result|failed
+    when: result is failed
 
   - name: build new src
     make:
@@ -45,7 +45,7 @@
       path: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
     when: "{{ compiled_python_cleanup }}"
 
-  when: python_result|failed
+  when: python_result is failed
 
 - name: testing for built {{ compiled_python_dist_name }}
   command: python{{ compiled_python_version.rsplit('.', 1)[0] }} --version
