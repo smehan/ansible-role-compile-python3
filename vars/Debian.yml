@@ -17,5 +17,7 @@ compiled_python3_debian_deps:
   - tk-dev
   - libc6-dev
 
+compiled_configure_flags: "--prefix=/usr --enable-optimizations"
+
 
 # apt-get install libcurl4-gnutls-dev ubuntu14
