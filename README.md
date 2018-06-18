@@ -28,6 +28,15 @@ None.
 
 MIT
 
+## Contributions
+
+To contribute please see [Contributing](CONTRIBUTING.md)
+
+Contributers to date are as follows:
+
+- pythonninja (fork deleted before I processed PR, constitutes bulk of 1-5-0)
+
 ## Author Information
 
 This role was created in 2017 by [Shawn Mehan](https://www.shawnmehan.com).
+
