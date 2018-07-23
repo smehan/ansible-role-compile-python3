@@ -1,6 +1,6 @@
 ---
 # defaults file for smehan.python3_compiled
-compiled_python_version: 3.7.0
+compiled_python_version: 3.6.6
 compiled_python_dist_name:  "Python-{{ compiled_python_version }}"
 compiled_python_tarball: "{{ compiled_python_dist_name }}.tar.xz"
 compiled_python_build_dir: "/tmp"
