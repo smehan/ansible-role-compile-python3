@@ -7,6 +7,13 @@
 - name: Build latest {{ compiled_python_dist_name }}
   block:
 
+  - name: Freshen cache
+    raw: sudo apt-get update
+    register: task_result
+    until: task_result.rc == 0
+    retries: 5
+    ignore_errors: yes
+
   - name: install deps for building {{ compiled_python_dist_name }}
     apt:
       name: "{{ item }}"
