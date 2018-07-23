@@ -19,8 +19,3 @@ compiled_python3_debian_deps:
   - libffi-dev
 
 compiled_configure_flags: "--prefix=/usr --enable-optimizations"
-# https://bugs.python.org/issue32401
-#compiled_configure_flags: "--prefix=/usr --enable-optimizations --without-ensurepip"
-
-
-# apt-get install libcurl4-gnutls-dev ubuntu14

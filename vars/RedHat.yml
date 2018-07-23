@@ -46,5 +46,4 @@ compiled_python3_centos6_deps:
 compiled_python3_redhat_deps: '{{ compiled_python3_centos7_deps if ansible_distribution_major_version == "7" else compiled_python3_centos6_deps}}'
 
 compiled_configure_flags: "--prefix=/usr --enable-optimizations "
-# https://bugs.python.org/issue32401
-#compiled_configure_flags: "--prefix=/usr --enable-optimizations --without-ensurepip"
+
