@@ -17,7 +17,7 @@
   - name: install deps for building {{ compiled_python_dist_name }}
     apt:
       name: "{{ item }}"
-      state: installed
+      state: present
     with_items: "{{ compiled_python3_debian_deps }}"
 
   - name: Ensure unpack dir exists
