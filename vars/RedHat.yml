@@ -16,6 +16,7 @@ compiled_python3_centos7_deps:
   - tk-devel
   - readline-devel
   - sqlite-devel
+  - libffi-devel
 
 # Define centos6 dependencies
 compiled_python3_centos6_deps:
@@ -39,10 +40,11 @@ compiled_python3_centos6_deps:
   - tk-devel
   - readline-devel
   - sqlite-devel
+  - libffi-devel
 
 # Choose which set of dependencies based on major_version of target platform
 compiled_python3_redhat_deps: '{{ compiled_python3_centos7_deps if ansible_distribution_major_version == "7" else compiled_python3_centos6_deps}}'
 
-#compiled_configure_flags: "--prefix=/usr --enable-optimizations "
+compiled_configure_flags: "--prefix=/usr --enable-optimizations "
 # https://bugs.python.org/issue32401
-compiled_configure_flags: "--prefix=/usr --enable-optimizations --without-ensurepip"
+#compiled_configure_flags: "--prefix=/usr --enable-optimizations --without-ensurepip"
