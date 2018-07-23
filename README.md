@@ -2,7 +2,7 @@
 
 Fetches a specified Python source tarball, installs it into a specified build directory,
 installs required dependencies, configures, makes and installs the resulting python3.
-Currently it defaults to Python 3.6.6 if none is specified.
+Currently it defaults to Python 3.7.0 if none is specified.
 
 [![Build Status](https://travis-ci.org/smehan/ansible-role-compile-python3.svg?branch=master)](https://travis-ci.org/smehan/ansible-role-compile-python3)
 
