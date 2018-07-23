@@ -17,3 +17,5 @@ galaxy_info:
   galaxy_tags:
     - python3
     - development
+    - compile
+    - install
