@@ -2,7 +2,7 @@
 - name: testing for built {{ compiled_python_dist_name }}
   command: python{{ compiled_python_version.rsplit('.', 1)[0] }} --version
   register: existing_python
-  # changed_when: False
+  changed_when: false
   ignore_errors: True
 
 - name: Build latest {{ compiled_python_dist_name }}
@@ -52,6 +52,6 @@
 - name: testing for built {{ compiled_python_dist_name }}
   command: python{{ compiled_python_version.rsplit('.', 1)[0] }} --version
   register: existing_python
-  # changed_when: False
+  changed_when: false
 
 - debug: msg="{{ existing_python }} is present"
