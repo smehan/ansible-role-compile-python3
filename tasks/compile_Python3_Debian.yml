@@ -11,7 +11,7 @@
   - name: Freshen cache
     raw: sudo apt-get update
     register: task_result
-    changed_when: False
+    # changed_when: False
     until: task_result.rc == 0
     retries: 5
     ignore_errors: yes
@@ -39,7 +39,7 @@
     args:
       chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
     register: result
-    changed_when: False
+    # changed_when: False
 
   - debug: msg="{{ result }}"
     when: result is failed
