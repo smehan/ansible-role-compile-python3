@@ -39,7 +39,7 @@
     args:
       chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
     register: result
-    changed_when: False
+    changed_when: false
 
   - debug: msg="{{ result }}"
     when: result is failed
