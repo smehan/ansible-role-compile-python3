@@ -9,12 +9,17 @@ env:
     init: /usr/lib/systemd/systemd
   - distro: centos6
     init: /sbin/init
-  - distro: ubuntu1604
+  - distro: ubuntu1804
+    init: /lib/systemd/systemd
+ - distro: ubuntu1604
     init: /lib/systemd/systemd
   - distro: ubuntu1404
     init: /sbin/init
+  - distro: debian9
+    init: /lib/systemd/systemd
   - distro: debian8
     init: /lib/systemd/systemd
+
 
 before_install:
   # Pull container
