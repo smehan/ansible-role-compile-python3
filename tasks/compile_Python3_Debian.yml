@@ -1,7 +1,8 @@
 ---
 - name: Check for built {{ compiled_python_dist_name }}
   command: python{{ compiled_python_version.rsplit('.', 1)[0] }} --version
-  register: existing_python
+  register: existing_cython
+  changed_when: false
   ignore_errors: True
 
 - name: Build latest {{ compiled_python_dist_name }}
@@ -10,6 +11,7 @@
   - name: Freshen cache
     raw: sudo apt-get update
     register: task_result
+    changed_when: false
     until: task_result.rc == 0
     retries: 5
     ignore_errors: yes
@@ -37,6 +39,7 @@
     args:
       chdir: "{{ compiled_python_build_dir }}/{{ compiled_python_dist_name }}"
     register: result
+    changed_when: false
 
   - debug: msg="{{ result }}"
     when: result is failed
@@ -57,5 +60,6 @@
 - name: testing for existing build of {{ compiled_python_dist_name }}
   command: python{{ compiled_python_version.rsplit('.', 1)[0] }} --version
   register: existing_python
+  changed_when: false
 
 - debug: msg="{{ existing_python }} is present"
