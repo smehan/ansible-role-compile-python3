@@ -18,9 +18,8 @@
 
   - name: install deps for building {{ compiled_python_dist_name }}
     apt:
-      name: "{{ item }}"
+      name: "{{ compiled_python3_debian_deps }}"
       state: present
-    with_items: "{{ compiled_python3_debian_deps }}"
 
   - name: Ensure unpack dir exists
     # target directory needs to exist to keep unarchive happy
