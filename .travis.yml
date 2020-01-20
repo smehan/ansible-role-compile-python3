@@ -13,8 +13,6 @@ env:
     init: /lib/systemd/systemd
   - distro: ubuntu1604
     init: /lib/systemd/systemd
-  - distro: ubuntu1404
-    init: /sbin/init
   - distro: debian9
     init: /lib/systemd/systemd
   - distro: debian8
